@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Navbar.css";
 import menuPic from "../../images/menu.png";
+import closePic from "../../images/close.png";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -11,7 +12,13 @@ const Navbar = () => {
     return (
         <div className='body'>
             <div className="container">
-                <img onClick={() => setShowbar(!showbar)} src={menuPic} alt="" className='menu-icon'/>
+                {
+                    showbar ?
+                    <img onClick={() => setShowbar(!showbar)} src={closePic} alt="" className='menu-cross'/>
+                    :
+                    <img onClick={() => setShowbar(!showbar)} src={menuPic} alt="" className='menu-icon'/>
+                }
+                
                 {
                     showbar
                     

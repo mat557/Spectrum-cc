@@ -6,10 +6,11 @@
 
 .container{
     width: 100%;
-    height:100vh;
+    z-index: 2;
     background: #eeedff;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+    /* height:100vh; */
 }
 
 
@@ -17,9 +18,20 @@
 .menu-icon{
     width: 35px;
     position: absolute;
-    top: 5%;
+    top: 35px;
     right: 10%;
 }
+
+.menu-cross{
+    width: 40px;
+    position: absolute;
+    /* top: 15%;
+     */
+     top:35px;
+    right: 11%;
+    z-index: 2;
+}
+
 
 
 .menu-box{
@@ -44,6 +56,7 @@
     width: 50px;
     cursor: pointer;
     margin-left: 20px;
+    transition: 1s ease-in;
 }
 
 
@@ -53,7 +66,12 @@
     background: #f92537;
     padding: 15px 40px;
     border-radius: 30px;
+    margin-right: 25px;
 }
+
+.menu-links{
+}
+
 
 .link-title{
     text-decoration: none;
@@ -61,6 +79,6 @@
     width: fit-content;
     color: #fff;
     margin: 30px 0;
-    font-size: 30px;
+    font-size: 20px;
     padding-left: 30px;
 }
