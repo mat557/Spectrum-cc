@@ -2,7 +2,7 @@
     width: 90%;
     margin: 0 auto;
     height: 100vh;
-    /* background-color: rgb(224, 186, 186); */
+    background-color: #efefef;
     /* background: linear-gradient(rgb(36, 36, 73,0.5), rgba(0, 0, 0, 0.58)), url('../../../images/login1.jpg'); ; */
 }
 
@@ -26,7 +26,7 @@
 
 .text-holder p{
     padding-left: 10px;
-    margin-bottom: -40px;
+    margin-bottom: -10px;
 }
 
 .text-holder h1{
@@ -39,7 +39,7 @@
 
 .text-holder h3{
     padding-left: 10px;
-    margin-top: -10px;
+    margin-top: 10px;
     font-size: 15px;
 }
 
@@ -74,6 +74,8 @@
 
 .img-holder{
     /* background-color: red; */
+    /* background: linear-gradient(transparent, rgb(0,0,0,0.5)); */
+    /* opacity: 1; */
 }
 
 .img-holder img{
@@ -81,14 +83,18 @@
     width:350px;
     height: 450px;
     border-radius: 10px;
+    /* opacity: 0; */
 }
 
-@media screen and (max-width:1170px) {
+@media screen and (max-width:470px) {
     .contant-holder{
         display:flex;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
+    }
+    .text-holder{
+        margin-left: 2px;
     }
     .text-holder h1{
         padding-left: 10px;
@@ -97,4 +103,19 @@
         font-size: 45px;
         font-weight: 900;
     }
+    .text-holder h3{
+        padding-left: 10px;
+        margin-top: -10px;
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    .button-group{
+        margin:0 auto;
+    }
 }
+
+/* @media only screen and (min-width: 470px) and (max-width: 1181px){
+    .contant-holder{
+        display: none;
+    }
+} */

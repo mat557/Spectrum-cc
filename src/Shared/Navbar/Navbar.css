@@ -42,6 +42,7 @@
     top:17%;
     left: 10%;
     padding:50px 0;
+    border-radius: 6px;
 }
 
 .right-links{
@@ -81,4 +82,24 @@
     margin: 30px 0;
     font-size: 20px;
     padding-left: 30px;
+}
+
+
+.signout-button{
+    display: block;
+    width: fit-content;
+    color: #fff;
+    background: #f92537;
+    margin: 30px 30px;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 15px 30px;
+    transition: .5s ease-in-out;
+    font-weight: 600;
+    border: none;
+}
+
+.signout-button:hover{
+    background-color: white;
+    color: #242449;
 }

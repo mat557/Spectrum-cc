@@ -101,9 +101,53 @@
     color: darkgray;
     padding-left: 10px;
     text-decoration: none;
+    margin-bottom: 5px;
 }
 
 .link-style:hover{
     color:#ffc107;
     
+}
+
+
+.socail-holder{
+    margin-top: -30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.socialLogin{
+    padding: 8px 22px;
+    border: 0px;
+    background-color: white;
+    border-radius: 6px;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all .5s ease-in-out;
+}
+
+.socialLogin:hover{
+    background-color: #fb2525;
+    color: white;
+}
+
+
+.or-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.or{
+    width: 80px;
+    height: 1px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.or-holder p{
+    color: white;
+    padding: 5px 5px;
 }

@@ -2,17 +2,43 @@ import React from 'react';
 import './Authenticate.css';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading';
+import SocialLogin from './SocialLogin';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth);
+
+    if(loading){
+        return <Loading></Loading>;
+    }
+
+    let signInError;
+    if(error){
+        signInError = <h1 style={{color:"red",fontSize:"12px",fontWeight:"500"}}>{error.message}</h1>;
+    }
 
     const onSubmit = (data) =>{
-        console.log(data)
+        createUserWithEmailAndPassword(data.email,data.password);
+    }
+
+    if(user){
+        console.log(user);
     }
 
     return (
         <div className='holder'>
             <div className=' signinBox'>
+                <div className='socail-holder'>
+                    <SocialLogin></SocialLogin>
+                    <div className='or-holder'>
+                        <div className='or'></div>
+                        <p>or</p>
+                        <div className='or'></div>
+                    </div>
+                </div>
                 <h1 className='text'>Register</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                         <p>Username</p>
@@ -28,6 +54,8 @@ const Signup = () => {
                         {errors.password &&  "password is required"}
       
                         <input type="submit" value="Register"/>
+
+                        {signInError}
                         <p>Forget Password?<span><Link className='link-style' to="/signup">Please Register</Link></span></p>
                         <p>Already have an account?<span><Link className='link-style' to="/login">Please Login</Link></span></p>
                 </form>
