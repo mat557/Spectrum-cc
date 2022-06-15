@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading';
 import SocialLogin from './SocialLogin';
+import useAddEmail from '../../Hooks/useAddEmail';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -21,7 +22,26 @@ const Signup = () => {
     }
 
     const onSubmit = (data) =>{
-        createUserWithEmailAndPassword(data.email,data.password);
+        const name = data.name;
+        const email = data.email;
+        const password = data.password;
+        createUserWithEmailAndPassword(email,password);
+        const user = {
+            name : name,
+            email : email
+        }
+
+        fetch(`http://localhost:5000/users/${email}`,{
+            method:'PUT',
+            headers :{
+                'content-type': 'application/json',
+            },
+            body : JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
     }
 
     if(user){
