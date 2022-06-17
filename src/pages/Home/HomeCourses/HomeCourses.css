@@ -1,0 +1,36 @@
+.courser-holder{
+    width:90%;
+    margin: 0 auto;
+}
+
+
+.course-title{
+    padding-top: 60px;
+}
+
+
+.course-title h1{
+    font-size: 45px;
+    font-weight: bold;
+
+}
+
+.course-title p{
+    font-size: 28px;
+    color:#242449;
+    margin-top: -2px;
+}
+
+
+.course-card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* here the style for single card starting from */
+
+.card{
+    flex-basis: 30%;
+}

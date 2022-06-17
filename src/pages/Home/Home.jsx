@@ -1,14 +1,14 @@
 import React from 'react';
-import Courses from '../Courses/Courses';
 import Banner from './Banner/Banner';
 import BusSummery from './BusSummery/BusSummery';
+import HomeCourses from './HomeCourses/HomeCourses';
 
 const Home = () => {
     return (
         <>
             <Banner></Banner>
             <BusSummery></BusSummery>
-            <Courses></Courses>
+            <HomeCourses></HomeCourses>
         </>
     );
 };
