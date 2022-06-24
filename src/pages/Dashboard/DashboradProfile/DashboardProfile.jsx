@@ -14,7 +14,21 @@ const DashboardProfile = () => {
     }
 
     const onSubmit = (data) =>{
-        console.log(data);
+        const img = data.image[0];
+        const formData = new FormData();
+         formData.append('image',img)
+        
+        const API_KEY = '4957c3c668ded462db1fb1002c4535e6';
+        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${API_KEY}`
+
+        fetch(url,{
+            method : 'POST',
+            body : formData,
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
     }
 
 
@@ -63,7 +77,7 @@ const DashboardProfile = () => {
                             <input type="file" placeholder='share your picture' {...register("image", { required: true })} /> <br />
                             {errors.image && "name is required"}
                                 <br />
-                            <input type="submit" value="Login"/>
+                            <input type="submit" value="Update"/>
                         </form>
                     </div>
                 </div>
