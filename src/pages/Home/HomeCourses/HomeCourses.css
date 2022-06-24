@@ -1,36 +1,93 @@
 .courser-holder{
-    width:90%;
+    width:95%;
     margin: 0 auto;
+    background-color: #242449;
+    border-radius: 8px;
 }
 
 
 .course-title{
     padding-top: 60px;
+    padding-left: 30px;
 }
 
 
 .course-title h1{
     font-size: 45px;
     font-weight: bold;
-
+    color: white;
 }
 
 .course-title p{
     font-size: 28px;
-    color:#242449;
+    color:white;
     margin-top: -2px;
 }
 
 
 .course-card{
-    display: flex;
-    flex-wrap: wrap;
+    width: 96%;
+    padding: 30px 0px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+    margin:120px auto;
 }
 
+.show-all-button{
+    margin-left:30px ;
+    margin-bottom: 60px;
+    border-radius: 5px;
+    border: none;
+    top: 75%;
+    font-size: 18px;
+    padding: 10px 22px;
+    font-weight: 700;
+    transition: .5s ease-in;
+}
+
+.show-all-button:hover{
+    background-color: #f92537;
+    color: white;
+}
 
 
 /* here the style for single card starting from */
 
 .card{
-    flex-basis: 30%;
+    background-color: #f92537;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height: 150px;
+    position: relative;
+}
+
+.card h1{
+    font-size: 19px;
+    color: white;
+    margin-top: -5px;
+}
+
+.card p{
+    font-size: 19px;
+    color: white;
+}
+
+
+.card-button{
+    position:absolute;
+    border-radius: 5px;
+    border: none;
+    top: 75%;
+    padding: 7px 16px;
+    font-weight: 700;
+    transition: .5s ease-in;
+}
+
+.card-button:hover{
+    background-color: #242449;
+    color: white;
 }

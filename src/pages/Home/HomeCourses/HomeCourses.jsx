@@ -19,6 +19,7 @@ const HomeCourses = () => {
                     ></CardHome>)
                 }
             </div>
+            <button className='show-all-button'>Show All</button>
         </div>
     );
 };

@@ -1,18 +1,21 @@
 import React from 'react';
 import './Authenticate.css';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading';
+import ExampleLoading from '../../Shared/ExampleLoading';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
 
     if(loading){
-        return <Loading></Loading>;
+        // return <Loading></Loading>;
+        return <ExampleLoading></ExampleLoading>
     }
 
     let logInError;
@@ -27,7 +30,7 @@ const Login = () => {
 
 
     if(user){
-        
+        navigate('/');
     }
 
 
